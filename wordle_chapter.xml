@@ -1,15 +1,80 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- This document was created with Syntext Serna Free. -->
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" []>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" []>
 <chapter>
   <title>Wordle</title>
   <synopsis>Wordle is an example of &quot;aleatoric&quot; visualization, in which randomness plays an essential role in placing marks on the screen. It has its roots in the navigable tag clouds popularized by such sites as del.icio.us and Flickr, but emphasises aesthetics over navigation. In this chapter, I&apos;ll explain where Wordle came from and describe how it works.</synopsis>
   <sect1>
     <title>Where Wordle Comes From</title>
-    <para>BODY TEXT HERE...</para>
+    <para>In April of 2004, my colleague Bernard Kerr and I gave our research group an informal talk on the growing use of <emphasis role="italic">tags</emphasis> in social software. We were interested in the way that tagging—associating keywords with resources—made things (such as photos on Flickr and bookmarks on del.icio.us) more findable.</para>
+    <para>Bernard and I wound up making a social bookmarking application, which he named &quot;dogear.&quot; One of the ubiquitous features of any application that lets users tag content is the <emphasis role="italic">tag cloud</emphasis>, a vaguely rectangular collection of clickable keywords. So, when we designed dogear, we made sure to feature a prominent tag cloud on every page.</para>
+    <para/>
   </sect1>
   <sect1>
     <title>How Wordle Works</title>
-    <para>BODY TEXT HERE...</para>
+    <sect2>
+      <title>Analysis</title>
+      <para>For the purposes of this discussion, a <emphasis role="italic">word</emphasis> is  a sequence of Unicode characters. In practice, as on the Wordle web site, a word is a sequence of non-whitespace characters. Each word must be assigned some numeric <emphasis role="italic">weight</emphasis>. The scale of the weights is arbitrary; it&apos;s the relationship between the weights that determines the relationship between the visual elements.</para>
+      <sect3>
+        <title>Finding Words</title>
+        <para>Natural-language analysis is as much craft as science, and, even given state-of-the-art computational tools, you have to apply judgement and taste. So it is with what might seem to be the straightforward task of scanning a text to extract a list of words.</para>
+        <para/>
+      </sect3>
+      <sect3>
+        <title>Removing Stop Words</title>
+        <para/>
+      </sect3>
+      <sect3>
+        <title>Assigning Weights to Words</title>
+        <para/>
+        <sect4>
+          <title>Word Frequency</title>
+          <para/>
+        </sect4>
+        <sect4>
+          <title>Log Likelihood</title>
+          <para/>
+        </sect4>
+      </sect3>
+    </sect2>
+    <sect2>
+      <title>Weighted Words Into Shapes</title>
+      <para>We begin with a list of words, each of which has some numeric “weight,” such as its frequency in a text. Wordle normalizes the weights to an arbitrary scale, which determines the magnitude of various “magical” constants that affect the resulting image (such as the minimum size of a hierarchical bounding box leaf, as described below). For each word, Wordle constructs a font with a point size equal to the word’s scaled weight, then uses the font to generate a shape, expressed as a collection of spline paths. In what follows, I assume only that a shape knows how to draw itself in some graphics context, that is has a known axis-aligned bounding box, and that it knows how to test for intersection with another shape. These techniques are, therefore, broadly applicable to general shapes, and not merely to text glyphs.</para>
+    </sect2>
+    <sect2>
+      <title>The Playing Field</title>
+      <para/>
+    </sect2>
+    <sect2>
+      <title>Placement</title>
+      <para/>
+    </sect2>
+    <sect2>
+      <title>Intersection Testing</title>
+      <sect3>
+        <title>Hierarchical Bounding Boxes</title>
+        <para/>
+      </sect3>
+      <sect3>
+        <title>Collision Detection Culling</title>
+        <para/>
+        <sect4>
+          <title>Collision Caching</title>
+          <para/>
+        </sect4>
+        <sect4>
+          <title>Spatial Indexing</title>
+          <para/>
+        </sect4>
+      </sect3>
+    </sect2>
+    <sect2>
+      <title>Other Ideas</title>
+      <para/>
+    </sect2>
+  </sect1>
+  <sect1>
+    <title>How Wordle is Used</title>
+    <synopsis>Wordle&apos;s disregard for the received wisdom about visualization best practice has made for </synopsis>
+    <para/>
   </sect1>
 </chapter>
